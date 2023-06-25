@@ -6,23 +6,27 @@ public class Program {
 
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
-
-        String nome1, nome2;
-        double valorPorHora1, valorPorHora2, total;
-        int horas1, horas2;
         
+        // Declarandoas variáveis do tipo funcionário
+        Funcionario f1, f2;
+        
+        // Instanciando (criando) os objetos
+        f1 = new Funcionario();
+        f2 = new Funcionario();
+       
         System.out.println("Dados do primeiro funcionáro:");
-        nome1 = sc.next();
-        valorPorHora1 = sc.nextDouble();
-        horas1 = sc.nextInt();
+        f1.nome = sc.next();
+        f1.valorPorHora = sc.nextDouble();
+        f1.horas = sc.nextInt();
 
         System.out.println("Dados do segundo funcionáro:");
-        nome2 = sc.next();
-        valorPorHora2 = sc.nextDouble();
-        horas2 = sc.nextInt();
+       	f2.nome = sc.next();
+        f2.valorPorHora = sc.nextDouble();
+        f2.horas = sc.nextInt();
 
-        total = valorPorHora1 * horas1 + valorPorHora2 * horas2;
+        //double total = f1.valorPorHora * f1.horas + f2.valorPorHora * f2.horas;
+        double total = f1.total() + f2.total();
 
-        System.out.printf("Total = %.2f%n",  total);
+        System.out.printf("Total dos dois funcionários = %.2f%n",  total);
     }
 }
